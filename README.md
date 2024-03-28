@@ -38,7 +38,7 @@ http://localhost:3000/api/categories/
 
 ```
 
-https://conexa-backend-test-pm5zvmdcta-rj.a.run.app/api
+https://kuria-test-backend-vlijgvlhxa-rj.a.run.app/api
 
 El deploy de la misma, se realizo en Google Cloud, con la herramienta Cloud Run para la cual se defino un Dockerfile. Finalmente la base de datos se encuentra en MongoAtlas.
 ```
