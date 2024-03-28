@@ -9,6 +9,7 @@
     <a href="http://nestjs.com/" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695796952/pngegg_1_b1hkpc.png" width="120" alt="Mongo" /></a>
     <a href="http://nestjs.com/" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695797082/pngegg_2_wtfbkd.png" width="60" alt="Gcloud" /></a>
   <a href="http://nestjs.com/" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695796821/pngegg_jm0gwt.png" width="100" alt="Gcloud" /></a>
+  <a href="http://nestjs.com/" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1711633037/swagger_da13pi.svg" width="100" alt="Gcloud" /></a>
 </p>
 
 # Kuria Test
@@ -70,15 +71,6 @@ El deploy de la misma, se realizo en Google Cloud, con la herramienta Cloud Run 
 # Tests unitarios
 
 ```
-
-## Tecnologias utilizadas
-
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="50" alt="Nest Logo" /></a>
-    <a href="http://nestjs.com/" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695796952/pngegg_1_b1hkpc.png" width="120" alt="Mongo" /></a>
-    <a href="http://nestjs.com/" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695797082/pngegg_2_wtfbkd.png" width="60" alt="Gcloud" /></a>
-  <a href="http://nestjs.com/" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695796821/pngegg_jm0gwt.png" width="100" alt="Gcloud" /></a>
-</p>
 
 ## Contacto
 
