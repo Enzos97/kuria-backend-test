@@ -16,6 +16,15 @@ export class RatingService {
     private readonly commonService: CommonService,
     private readonly professionalService: ProfessionalService
   ){}
+  async getMyRating(user:User){
+    try {
+      const myrating = await this.ratingModel.find({professionalId:user.id})
+      console.log('myrating',myrating)
+      return myrating
+    } catch (error) {
+      this.commonService.handleExceptions(error)
+    }
+  }
   async create(createRatingDto: CreateRatingDto, user:User) {
     try {
       const rating = await this.ratingModel.create({...createRatingDto, userId:user.id})

@@ -23,6 +23,7 @@ async function bootstrap() {
    .addTag('Auth') 
    .addTag('Admin') 
    .addTag('User') 
+   .addTag('Professional') 
    .addTag('Support') 
    .addTag('Category') 
    .build();

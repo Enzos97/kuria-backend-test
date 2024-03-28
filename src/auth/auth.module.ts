@@ -42,6 +42,6 @@ import { EmailsModule } from 'src/emails/emails.module';
     CommonModule,
     EmailsModule
   ],
-  exports:[MongooseModule,JwtStrategy,PassportModule,JwtModule]
+  exports:[MongooseModule,JwtStrategy,PassportModule,JwtModule,AuthService]
 })
 export class AuthModule {}

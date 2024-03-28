@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, forwardRef } from '@nestjs/common';
 import { RatingService } from './rating.service';
 
 import { MongooseModule } from '@nestjs/mongoose';
@@ -17,8 +17,8 @@ import { AuthModule } from 'src/auth/auth.module';
       }
     ]),
     CommonModule,
-    ProfessionalModule,
-    AuthModule
+    forwardRef(() => ProfessionalModule),
+    forwardRef(() => AuthModule),
   ],
   exports:[
     RatingService

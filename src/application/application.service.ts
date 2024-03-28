@@ -22,10 +22,21 @@ export class ApplicationService {
       this.commonService.handleExceptions(error);
     }
   }
-
-
-  update(id: number, updateApplicationDto: UpdateApplicationDto) {
-    return `This action updates a #${id} application`;
+  async getMyApplications(user:User){
+    try {
+      const myApplications = await this.applicationModel.find({id:user.id})
+      console.log('myApplications',myApplications)
+      return myApplications
+    } catch (error) {
+      this.commonService.handleExceptions(error)
+    }
   }
-
+  async update(updateApplicationDto:UpdateApplicationDto, id:string){
+    try {
+      const updateAppli = await this.applicationModel.findByIdAndUpdate(id,updateApplicationDto,{new:true})
+      return updateAppli
+    } catch (error) {
+      this.commonService.handleExceptions(error)
+    }    
+  }
 }
