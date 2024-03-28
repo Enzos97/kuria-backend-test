@@ -1,5 +1,6 @@
 import {IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString, Matches, MaxLength, MinLength } from "class-validator";
 import { Role } from "../types/role.type";
+import { ApiHideProperty } from "@nestjs/swagger";
 
 export class CreateAuthDto {
     @IsString()
@@ -17,9 +18,14 @@ export class CreateAuthDto {
         message: 'The password must have a Uppercase, lowercase letter and a number'
     })
     password:string;
+    @ApiHideProperty()
     @IsOptional()
     @IsString()
     category?:string;
+    
+    @ApiHideProperty()
+    @IsOptional()
+    isActive:boolean = true;
 }
 
 export class CreateAuthProfessionalDto {

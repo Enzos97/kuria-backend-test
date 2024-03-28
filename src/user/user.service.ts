@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Query } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
@@ -11,6 +11,7 @@ import { RatingService } from '../rating/rating.service';
 import { ApplicationService } from '../application/application.service';
 import { CreateApplicationDto } from 'src/application/dto/create-application.dto';
 import { UserInterface } from 'src/auth/interfaces/user.interface';
+import { CreateRatingDto } from 'src/rating/dto/create-rating.dto';
 
 @Injectable()
 export class UserService {
@@ -26,6 +27,15 @@ export class UserService {
     try {
       const newApplication = await this.applicationService.create(createApplicationDto, user.id)
       return newApplication
+    } catch (error) {
+      this.commonService.handleExceptions(error)
+    }
+  }
+
+  async createRating(createRatingnDto: CreateRatingDto, user:User){
+    try {
+      const newRating = await this.ratingService.create(createRatingnDto, user)
+      return newRating
     } catch (error) {
       this.commonService.handleExceptions(error)
     }
@@ -54,6 +64,7 @@ export class UserService {
       const professionals = await query.sort({ no: 1 }).exec();
 
       const professionalsDto: UserInterface[] = professionals.map(user => ({
+        id:user.id,
         fullName: user.fullName,
         email: user.email,
         photo: user.photo,
@@ -71,18 +82,33 @@ export class UserService {
     }
   }
   async searchProfessionals(criteria: SearchCriteriaDto) {
-    const { profession, country } = criteria;
+    const { category, country } = criteria;
 
     //RegExp para la búsqueda case-sensitive
-    const categoryRegex = new RegExp("^" +profession, "i");
+    const categoryRegex = new RegExp("^" +category, "i");
     const locationRegex = new RegExp("^" +country, "i");
 
-    const query = {
-      profession: { $regex: categoryRegex },
-      country: { $regex: locationRegex },
-      roles: 'PROFESSIONAL',
-    };
+    let query: any = { roles: 'PROFESSIONAL' }; 
+
+    if (category && country) { 
+      query = {
+          $and: [
+              { category: { $regex: categoryRegex } },
+              { country: { $regex: locationRegex } }
+          ],
+          roles: 'PROFESSIONAL'
+      };
+    } else {
+        if (category) {
+            query.category = { $regex: categoryRegex };
+        }
+        if (country) {
+            query.country = { $regex: locationRegex };
+        }
+    }
+
     const professionals = await this.userModel.find(query).exec();
+
     const professionalsDto: UserInterface[] = professionals.map(user => ({
       fullName: user.fullName,
       email: user.email,

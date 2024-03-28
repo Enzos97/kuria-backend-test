@@ -9,15 +9,6 @@ export class CreateApplicationDto {
   @IsString()
   @IsNotEmpty()
   texto: string;
-
-  @IsArray()
-  @IsString({ each: true })
-  @IsOptional()
-  state?: StateAppli
-
-  @IsBoolean()
-  @IsOptional()
-  read?: boolean = false;
   
   @IsString()
   professionalId:string;

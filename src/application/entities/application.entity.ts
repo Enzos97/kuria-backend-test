@@ -21,9 +21,18 @@ export class Application {
     state:StateAppli;
     @Prop({default:false})
     read:boolean;
-    @Prop({ type: [{ type: SchemaTypes.ObjectId, ref: User.name }] }) // Referencia al usuario profecional
+    @Prop({
+        type: SchemaTypes.ObjectId,
+        ref: User.name,
+        index: true,
+        required: true,
+    }) // Referencia al usuario profecional
     professionalId: Types.ObjectId;   
-    @Prop({ type: [{ type: SchemaTypes.ObjectId, ref: User.name }] }) // Referencia al usuariocreador
+    @Prop({
+        type: SchemaTypes.ObjectId,
+        ref: User.name,
+        index: true,
+    }) // Referencia al usuariocreador
     userId: Types.ObjectId;  
 }
 

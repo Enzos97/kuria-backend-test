@@ -46,6 +46,7 @@ export class SupportService {
       const professionals = await query.sort({ no: 1 }).exec();
 
       const professionalsDto: UserInterface[] = professionals.map(user => ({
+        id: user.id,
         fullName: user.fullName,
         email: user.email,
         photo: user.photo,
@@ -55,7 +56,9 @@ export class SupportService {
         state: user.state,
         studyCertificate: user.studyCertificate,
         category: user.category,
-        rating: user.rating
+        rating: user.rating,
+        isActive:user.isActive,
+        roles:user.roles
       }));
 
       return { professionals: professionalsDto, totalElements, maxpages, currentpage };

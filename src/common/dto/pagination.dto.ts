@@ -2,6 +2,7 @@ import { Type } from "class-transformer";
 import { IsBoolean, IsIn, IsNumber, IsOptional, IsPositive, IsString, Min } from "class-validator";
 import { Role, roleList } from './../../auth/types/role.type';
 import { StateAppli } from "src/application/types/stateAppli.type";
+import { ApiHideProperty } from "@nestjs/swagger";
 
 export class PaginationDto{
     @IsOptional()
@@ -25,7 +26,8 @@ export class PaginationDto{
     @IsString()
     state?:StateAppli
 
+    @ApiHideProperty()
     @IsOptional()
-    @IsBoolean()
+    @IsString()
     isActive?:boolean
 }

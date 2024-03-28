@@ -1,6 +1,7 @@
 import { StateAppli } from "src/application/types/stateAppli.type";
 
 export interface UserInterface {
+    id?: string;
     fullName: string;
     email: string;
     photo: string;
@@ -11,4 +12,6 @@ export interface UserInterface {
     studyCertificate: string;
     category: string;
     rating: number;
+    isActive?:Boolean;
+    roles?:string[]
   }

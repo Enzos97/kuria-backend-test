@@ -10,41 +10,52 @@ import { CreateApplicationDto } from 'src/application/dto/create-application.dto
 import { Auth } from 'src/auth/decorators/auth.decorator';
 import { Role } from 'src/auth/types/role.type';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { CreateRatingDto } from 'src/rating/dto/create-rating.dto';
 
 @ApiTags('User')
 @Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
-
+  
+  
   @ApiBearerAuth()
-  @Post()
+  @Post('professional/aplication')
   @Auth(Role.user)
   create(
     @Body() createAppliDto: CreateApplicationDto,
     @GetUser() user: User
-    ) {
+  ) {
     return this.userService.createApplication(createAppliDto, user);
   }
+    
+    @ApiBearerAuth()
+    @Post('professional/rating')
+    @Auth(Role.user)
+    createRating(
+      @Body() createRatingDto: CreateRatingDto,
+      @GetUser() user: User
+      ) {
+        return this.userService.createRating(createRatingDto, user);
+      }
+    @ApiBearerAuth()
+    @Get()
+    @Auth(Role.user)
+    findAll(@Query() paginationDto: PaginationDto) {
+      return this.userService.findAll(paginationDto);
+    }
+    
+    @ApiBearerAuth()
+    @Get(':id')
+    @Auth(Role.user)
+    findOne(@Param('id') id: string) {
+      return this.userService.findOne(id);
+    }
+    @ApiBearerAuth()
+    @Get('search/professional/')
+    @Auth(Role.user)
+    searchProfessionals(@Query() criteria: SearchCriteriaDto) {
+      return this.userService.searchProfessionals(criteria);
+    }
 
-  @ApiBearerAuth()
-  @Get()
-  @Auth(Role.user)
-  findAll(@Query() paginationDto: PaginationDto) {
-    return this.userService.findAll(paginationDto);
-  }
-
-  @ApiBearerAuth()
-  @Get('search/professional')
-  @Auth(Role.user)
-  searchProfessionals(@Query() criteria: SearchCriteriaDto) {
-    return this.userService.searchProfessionals(criteria);
-  }
-
-  @ApiBearerAuth()
-  @Get(':id')
-  @Auth(Role.user)
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(id);
-  }
 
 }

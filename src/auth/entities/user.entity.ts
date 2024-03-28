@@ -26,7 +26,7 @@ export class User extends Document {
     })
     password:string;
     @Prop({
-        default:true
+        default:false
     })
     isActive:Boolean;
     @Prop({
