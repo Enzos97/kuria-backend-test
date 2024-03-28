@@ -40,7 +40,7 @@ con dichas credenciales debemos loguearnos (con admin o support segun el rol que
 (http://localhost:3000/api/auth/login)
 
 2 
-utilizando el token obtenido al logearnos, nos autorizamos y ejecutamos el siguiente seed, que hace una precarga de peliculas, a partir de la api publica de Star Wars.
+utilizando el token obtenido al logearnos, nos autorizamos y ejecutamos el siguiente seed, que hace una precarga de categorias.
 http://localhost:3000/api/categories/
 ```
 8. Testear el resto de los endpoints que fueron solicitados en Swagger.
