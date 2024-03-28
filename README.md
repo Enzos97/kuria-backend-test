@@ -5,7 +5,7 @@
 ### Tecnologías Utilizadas
 
 <p align="center">
-  <a href="TypeScript.js" target="blank"><img src="https://nestjs.com/img/logo-small.svg](https://res.cloudinary.com/dqavzr8iu/image/upload/v1695797129/pngegg_3_iet8gz.png" width="50" alt="Nest Logo" /></a>
+  <a href="TypeScript.js" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695797129/pngegg_3_iet8gz.png" width="50" alt="Nest Logo" /></a>
 </p>
 
 ![Node.js](images/nodejs_logo.png)
