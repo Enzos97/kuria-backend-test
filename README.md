@@ -3,7 +3,7 @@
 </p>
 
 
-# Conexa Test
+# Kuria Test
 Intrucciones para levantar el proyecto localmente
 1. Clonar proyecto
 2. ```npm install```
