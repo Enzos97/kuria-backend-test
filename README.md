@@ -6,15 +6,12 @@
 
 <p align="center">
   <a href="TypeScript.js" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695797129/pngegg_3_iet8gz.png" width="50" alt="Nest Logo" /></a>
+  <a href="NestJS" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695797129/pngegg_3_iet8gz.png" width="50" alt="Nest Logo" /></a>
+    <a href="NestJS" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695796952/pngegg_1_b1hkpc.png" width="50" alt="Nest Logo" /></a>
+    <a href="NestJS" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695796821/pngegg_jm0gwt.png" width="50" alt="Nest Logo" /></a>
+    <a href="NestJS" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1711633037/swagger_da13pi.svg" width="50" alt="Nest Logo" /></a>
+      <a href="NestJS" target="blank"><img src="https://res.cloudinary.com/dqavzr8iu/image/upload/v1695797082/pngegg_2_wtfbkd.png" width="50" alt="Nest Logo" /></a>
 </p>
-
-![Node.js](images/nodejs_logo.png)
-![TypeScript.js]((https://res.cloudinary.com/dqavzr8iu/image/upload/v1695797129/pngegg_3_iet8gz.png))
-![NestJS](images/nestjs_logo.png)
-![MongoDB](images/mongodb_logo.png)
-![Google Cloud Platform](images/gcp_logo.png)
-![Swagger](images/swagger_logo.png)
-![Docker](images/docker_logo.png)
 
 # Kuria Test
 Intrucciones para levantar el proyecto localmente
