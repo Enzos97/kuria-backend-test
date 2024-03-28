@@ -2,6 +2,14 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
 
+### Tecnologías Utilizadas
+
+![Node.js](images/nodejs_logo.png)
+![NestJS](images/nestjs_logo.png)
+![MongoDB](images/mongodb_logo.png)
+![Google Cloud Platform](images/gcp_logo.png)
+![Swagger](images/swagger_logo.png)
+![Docker](images/docker_logo.png)
 
 # Kuria Test
 Intrucciones para levantar el proyecto localmente
