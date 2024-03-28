@@ -5,6 +5,7 @@
 ### Tecnologías Utilizadas
 
 ![Node.js](images/nodejs_logo.png)
+![TypeScript.js]([images/nodejs_logo.png](https://res.cloudinary.com/dqavzr8iu/image/upload/v1695797129/pngegg_3_iet8gz.png))
 ![NestJS](images/nestjs_logo.png)
 ![MongoDB](images/mongodb_logo.png)
 ![Google Cloud Platform](images/gcp_logo.png)
