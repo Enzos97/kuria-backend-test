@@ -154,7 +154,7 @@ export class UserService {
     const professionalUsers = await this.userModel.countDocuments({ roles: 'PROFESSIONAL' }).exec();
     const normalUsers = await this.userModel.countDocuments({ roles: 'USER' }).exec();
     const pendingUsers = await this.userModel.countDocuments({ state: 'PENDING' }).exec();
-    console.log(totalUsers,professionalUsers,normalUsers,pendingUsers)
+
     return {
       totalUsers,
       adminUsers,

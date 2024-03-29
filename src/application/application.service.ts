@@ -25,7 +25,6 @@ export class ApplicationService {
   async getMyApplications(user:User){
     try {
       const myApplications = await this.applicationModel.find({id:user.id})
-      console.log('myApplications',myApplications)
       return myApplications
     } catch (error) {
       this.commonService.handleExceptions(error)

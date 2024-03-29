@@ -19,7 +19,7 @@ export class RatingService {
   async getMyRating(user:User){
     try {
       const myrating = await this.ratingModel.find({professionalId:user.id})
-      console.log('myrating',myrating)
+
       return myrating
     } catch (error) {
       this.commonService.handleExceptions(error)
