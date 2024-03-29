@@ -22,7 +22,7 @@ export class CreateAuthDto {
     @IsOptional()
     @IsString()
     category?:string;
-    
+
     @ApiHideProperty()
     @IsOptional()
     isActive:boolean = true;
@@ -63,8 +63,10 @@ export class CreateAuthProfessionalDto {
     @IsNotEmpty()
     studyCertificate:string;
 
+    @ApiHideProperty()
     @IsOptional()
     isActive:boolean = false;
+    @ApiHideProperty()
     @IsOptional()
     roles:string[] = [Role.professional];
 }
