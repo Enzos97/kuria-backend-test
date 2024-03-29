@@ -50,8 +50,8 @@ export class ProfessionalService {
 
   async update(id: string, updateProfessionalDto: UpdateProfessionalDto) {
     try {
-      const rating = await this.userModel.findByIdAndUpdate(id,updateProfessionalDto,{new:true})
-      return rating
+      const updateProfessionalOrUser = await this.userModel.findByIdAndUpdate(id,updateProfessionalDto,{new:true})
+      return updateProfessionalOrUser
     } catch (error) {
       this.commonService.handleExceptions(error)
     }

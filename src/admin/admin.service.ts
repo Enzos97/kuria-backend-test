@@ -25,7 +25,8 @@ export class AdminService {
 
   async getUsersStatistics(){
     try {
-      return await this.userService.getUsersStatistics()
+      const statistics = await this.userService.getUsersStatistics()
+      return statistics
     } catch (error) {
       this.commonService.handleExceptions(error)
     }

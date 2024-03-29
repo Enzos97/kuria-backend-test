@@ -150,12 +150,14 @@ export class UserService {
   //Indicadores
   async getUsersStatistics() {
     const totalUsers = await this.userModel.countDocuments().exec();
+    const adminUsers = await this.userModel.countDocuments({ roles: 'ADMIN' }).exec();
     const professionalUsers = await this.userModel.countDocuments({ roles: 'PROFESSIONAL' }).exec();
     const normalUsers = await this.userModel.countDocuments({ roles: 'USER' }).exec();
-    const pendingUsers = await this.userModel.countDocuments({ state: 'pending' }).exec();
-
+    const pendingUsers = await this.userModel.countDocuments({ state: 'PENDING' }).exec();
+    console.log(totalUsers,professionalUsers,normalUsers,pendingUsers)
     return {
       totalUsers,
+      adminUsers,
       professionalUsers,
       normalUsers,
       pendingUsers

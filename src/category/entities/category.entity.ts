@@ -7,7 +7,8 @@ import { Document } from "mongoose";
 export class Category extends Document {
     @Prop({
         required:true,
-        unique:true
+        unique:true,
+        set: (val: string) => val.toLowerCase().trim(), get: (val: string) => val
     })
     name:string
 }

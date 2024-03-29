@@ -4,13 +4,15 @@ import { CreateCategoryDto } from './dto/create-category.dto';
 import { UpdateCategoryDto } from './dto/update-category.dto';
 import { Auth } from 'src/auth/decorators/auth.decorator';
 import { Role } from 'src/auth/types/role.type';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Category')
 @Controller('category')
 export class CategoryController {
   constructor(private readonly categoryService: CategoryService) {}
-
+  
+  @ApiOperation({ summary: 'CATEGORY es un CRUD de categorias', description: 'Estos endpoints solo estan habbilitados para usuarios ADMIN'})
+  
   @ApiBearerAuth()
   @Post()
   @Auth(Role.admin)
