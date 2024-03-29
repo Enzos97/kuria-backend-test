@@ -46,6 +46,7 @@ http://localhost:3000/api/categories/
 # Api deployada
 
 ```
+URL de la api deployada con Swagger:
 
 https://kuria-test-backend-vlijgvlhxa-rj.a.run.app/api
 
@@ -58,7 +59,7 @@ Tener cuenta en Google Cloud.
 2
 Habilitar los permisos de usuarios en el IAM (en GCLOUD)
 3
-Generar un Doskerfile en la raiz del archivo (les dejo un template de ejemplo)
+Generar un Dockerfile en la raiz del archivo (les dejo un template de ejemplo)
 4
 Se puede hacer un deploy de test local en docker (opcional).
 -- Generar un docketignore:
