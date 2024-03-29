@@ -50,6 +50,46 @@ http://localhost:3000/api/categories/
 https://kuria-test-backend-vlijgvlhxa-rj.a.run.app/api
 
 El deploy de la misma, se realizo en Google Cloud, con la herramienta Cloud Run para la cual se defino un Dockerfile. Finalmente la base de datos se encuentra en MongoAtlas.
+
+## Instrucciones para el deploy (Manually deploying to Cloud Run)
+
+1
+Tener cuenta en Google Cloud.
+2
+Habilitar los permisos de usuarios en el IAM (en GCLOUD)
+3
+Generar un Doskerfile en la raiz del archivo (les dejo un template de ejemplo)
+4
+Se puede hacer un deploy de test local en docker (opcional).
+-- Generar un docketignore:
+  Dockerfile
+  .dockerignore
+  node_modules
+  npm-debug.log
+  dist
+-- Test container local:
+  docker build -t {nombre proyecto} .
+
+  docker run -p80:3000 {nombre proyecto}
+5
+Comprobar que el proyecto CLI de gcloud esté configurado:
+-- comandos:
+  gcloud init
+  ...
+  seguir pasos de configuracion SIMPLES en consola
+  ...
+6
+Utiliza Cloud Build para crear la imagen del contenedor (usando Dockerfile como instrucciones)
+-- comando:
+  gcloud run deplot
+  ...
+  seguir pasos de configuracion SIMPLES en consola.
+  ...
+  setear la region (sugiero southamerica-east1)
+7
+Si todo fue bien el proyecto es deployado con exito y recibimos por consola una URL.
+En est caso la siguiente: https://kuria-test-backend-vlijgvlhxa-rj.a.run.app
+
 ```
 
 # Funciones extra a las solicitadas
@@ -59,14 +99,13 @@ El deploy de la misma, se realizo en Google Cloud, con la herramienta Cloud Run 
 # Seed para la precarga de la base de datos.
 # Paginado para el endpoint GET de los usuarios profesionales.
 # Servicio para enviar Mails de bienvenida cuando se registra un nuevo usuario.
-
+# Herramientas para que el profesional pueda aceptar la solicitud (cambio de estado)
 ```
 
 # Funciones que faltan por cuestiones de tiempo y contexto (test)
 
 ```
 
-# Herramientas para que el profesional pueda aceptar la solicitud (cambio de estado)
 # Indicadores como cuanto usuarios se registraron en un rango de tiempo pasado (meses, semanas, dias, etc)
 # Tests unitarios
 
