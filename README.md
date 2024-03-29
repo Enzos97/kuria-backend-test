@@ -82,7 +82,7 @@ Comprobar que el proyecto CLI de gcloud esté configurado:
 6
 Utiliza Cloud Build para crear la imagen del contenedor (usando Dockerfile como instrucciones)
 -- comando:
-  gcloud run deplot
+  gcloud run deploy
   ...
   seguir pasos de configuracion SIMPLES en consola.
   ...
